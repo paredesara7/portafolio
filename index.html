@@ -128,14 +128,14 @@
 
 
 
-    
-<section id="diseno">
+<!--PESTAÑA: PRACTICAS DE TEST -->   
+  <section id="diseno">
           <h2>Prácticas de Testing</h2>
             <p>
                 Estas prácticas fueron realizadas como parte de un curso de testing. Incluyen ejemplos de historias de usuario, 
                 casos de prueba y reportes de bugs, documentados de forma sencilla para aplicar los conceptos aprendidos.
             </p>
-          <!-- Lista desplegable -->
+<!-- Lista desplegable -->
           <label for="testingSelector">Selecciona una categoría:</label>
           <select id="testingSelector" onchange="mostrarContenido()">
             <option value="">Elegir📸</option>
@@ -145,7 +145,7 @@
             <option value="postmanpruebas">PruebasGET_Postman</option>
           </select>
 
-          <!-- Contenido de Historias de Usuario -->
+<!-- Contenido de Historias de Usuario -->
           <div id="historias" class="testing-content" style="display:none;">
             <div class="project-card">
               <a href="imagenes/historia-usuario.png" target="_blank">
@@ -156,7 +156,7 @@
             <!--  -->
           </div>
 
-          <!-- Contenido de Casos de Prueba -->
+<!-- Contenido de Casos de Prueba -->
           <div id="casos" class="testing-content" style="display:none;">
             <div class="project-card">
               <a href="imagenes/casonum1.png" target="_blank">
@@ -166,7 +166,7 @@
             </div>
           </div>
 
-          <!-- Contenido de Reportes de Bug -->
+<!-- Contenido de Reportes de Bug -->
           <div id="bugs" class="testing-content" style="display:none;">
             <div class="project-card">
               <a href="imagenes/reportebug1.png" target="_blank">
@@ -176,7 +176,7 @@
             </div>
           </div>
 
-          <!-- Contenido de PruebasGET_Postman -->
+<!-- Contenido de PruebasGET_Postman -->
           <div id="postmanpruebas" class="testing-content" style="display:none;">
             <div class="project-card">
               <p>
@@ -193,34 +193,55 @@
               </a>
             </div>
           </div> 
+      
+<!-- PRÁCTICAS: MASTER -->
+          <h2 style="margin-top: 60px;">Colaboraciones en proyectos de Mastertech</h2>
+          <p>
+            Estas colaboraciones incluyen dos prácticas principales:<br>
+                Una enfocada en la planificación y ejecución de pruebas funcionales,<br>
+                y otra en la detección y documentación de un bug real del sitio.
+          </p>
+<!-- Lista desplegable de Mastertech -->
+            <label for="mastertechSelector">Selecciona una categoría:</label>
+            <select id="mastertechSelector" onchange="mostrarContenidoMastertech()">
+              <option value="">Elegir📸</option>
+              <option value="banners">Caso de prueba</option>
+              <option value="bug_mt1">Reporte de un bug</option> 
+            </select>
 
-        <h2 style="margin-top: 60px;">Prácticas participadas</h2>
-            <p>
-                Estas prácticas fueron realizadas como parte de un curso de testing. Incluyen ejemplos de historias de usuario, 
-                casos de prueba y reportes de bugs, documentados de forma sencilla para aplicar los conceptos aprendidos.
-            </p>
-          <!-- Lista desplegable -->
-          <label for="testingSelector">Selecciona una categoría:</label>
-          <select id="testingSelector" onchange="mostrarContenido()">
-            <option value="">Elegir📸</option>
-            <option value="historias">Historias de Usuario</option>
-            <option value="casos">Casos de Prueba</option>
-            <option value="bugs">Reportes de Bug</option>
-            <option value="postmanpruebas">PruebasGET_Postman</option>
-          </select>
 
-          <!-- Contenido real -->
-          <div id="historias" class="testing-content" style="display:none;">
-            <div class="project-card">
-              <a href="imagenes/historia-usuario.png" target="_blank">
-                <img src="imagenes/historia-usuario.png" alt="Historia de Usuario: Práctica del Curso" class="project-image" />
-              </a>
-              <p>Historia de usuario escrita en Excel para registrar funcionalidades básicas del sistema.</p>
+<!-- Contenido de plan de prueba -->
+            <div id="banners" class="mastertech-content" style="display:none;">
+              <div class="project-card">
+                <a href="imagenes/prueba_mt1.png" target="_blank">
+                  <img src="imagenes/prueba_mt1.png" alt="prueba para Mastertech" class="project-image" />
+                </a>
+                <p>Ejemplo ilustrativo del formato utilizado para Mastertech.</p>
+              </div>
             </div>
-            
-          </div>
+<!-- Contenido: reporte bug -->
+            <div id="bug_mt1" class="mastertech-content" style="display:none;">
+              <div class="project-card">
+                <a href="imagenes/bug_mt1.png" target="_blank">
+                  <img src="imagenes/bug_mt1.png" alt="prueba para Mastertech" class="project-image" />
+                </a>
+                <p>Ejemplo ilustrativo del formato utilizado para reportar un gub para Mastertech.</p>
+              </div>
+            </div>
+                      <script>
+                      function mostrarContenidoMastertech() {
+                        const selector = document.getElementById("mastertechSelector");
+                        const value = selector.value;
+                        const contents = document.querySelectorAll(".mastertech-content");
 
-</section>
+                        contents.forEach(content => content.style.display = "none");
+                        if (value) {
+                          document.getElementById(value).style.display = "block";
+                        }
+                      }
+                      </script>
+
+  </section>
 
 
 <!-- JavaScript para mostrar/ocultar contenido -->
