@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio SParedes</title>
+  <title>Portafolio: Paredes.</title>
   <link rel="shortcut icon" href="imagenes/pestana.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -136,13 +136,12 @@
                 casos de prueba y reportes de bugs, documentados de forma sencilla para aplicar los conceptos aprendidos.
             </p>
 <!-- Lista desplegable -->
-          <label for="testingSelector">Selecciona una categoría:</label>
+          <label for="testingSelector">Documental:</label>
           <select id="testingSelector" onchange="mostrarContenido()">
             <option value="">Elegir📸</option>
             <option value="historias">Historias de Usuario</option>
             <option value="casos">Casos de Prueba</option>
             <option value="bugs">Reportes de Bug</option>
-            <option value="postmanpruebas">PruebasGET_Postman</option>
           </select>
 
 <!-- Contenido de Historias de Usuario -->
@@ -176,21 +175,51 @@
             </div>
           </div>
 
-<!-- Contenido de PruebasGET_Postman -->
-          <div id="postmanpruebas" class="testing-content" style="display:none;">
+
+<!--NUEVA CATEGORIA-->
+          <h1></h1>
+          <!-- Lista desplegable -->
+          <label for="testingSelector1">Postman:</label>
+          <select id="testingSelector1" onchange="mostrarContenidopost()">
+            <option value="">Elegir📸</option>
+            <option value="postmanpost">Método POST</option>
+            <option value="postamget">Método GET</option>
+            <option value="postmanput">Método PUT</option>
+          </select>
+
+<!-- Contenido de Postman -->
+          <div id="postmanpost" class="testing-content1" style="display:none;">
             <div class="project-card">
               <p>
-                Son pruebas utilizando Postman para la consulta de clima a través de la API de OpenWeather.<br>
-                Contiene validaciones de estado, tiempo de respuesta y datos meteorológicos.<br>
+                Método POST.<br>
+                Registro de una nueva mascota.
               </p>
+                <a href="imagenes/post3.png" target="_blank">
+                  <img src="imagenes/post3.png" alt="Prueba en postman" class="project-image espaciado" />
+                </a>
+            </div>
+          </div> 
 
-              <a href="imagenes/p01.png" target="_blank">
-                <img src="imagenes/p01.png" alt="Prueba en postman" class="project-image espaciado" />
-              </a>
-
-              <a href="imagenes/p02.png" target="_blank">
-                <img src="imagenes/p02.png" alt="Prueba en postman" class="project-image espaciado" />
-              </a>
+            <div id="postamget" class="testing-content1" style="display:none;">
+            <div class="project-card">
+              <p>
+                Método GET.<br>
+                Consulta del registro creado.
+              </p>
+                <a href="imagenes/get1.png" target="_blank">
+                  <img src="imagenes/get1.png" alt="Prueba en postman" class="project-image espaciado" />
+                </a>
+            </div>
+          </div> 
+            <div id="postmanput" class="testing-content1" style="display:none;">
+            <div class="project-card">
+              <p>
+                Método PUT.<br>
+                Edición del comportamiento de una mascota. (De "TRANQUILA" a "JUGUETONA")
+              </p>
+                <a href="imagenes/put.png" target="_blank">
+                  <img src="imagenes/put.png" alt="Prueba en postman" class="project-image espaciado" />
+                </a>
             </div>
           </div> 
       
@@ -244,11 +273,25 @@
   </section>
 
 
-<!-- JavaScript para mostrar/ocultar contenido -->
+<!-- JavaScript para mostrar/ocultar contenido de las practicas documentales-->
 <script>
   function mostrarContenido() {
     const seleccion = document.getElementById("testingSelector").value;
     const secciones = document.querySelectorAll(".testing-content");
+
+    secciones.forEach(sec => sec.style.display = "none");
+
+    if (seleccion) {
+      document.getElementById(seleccion).style.display = "block";
+    }
+  }
+</script>
+
+<!-- JavaScript para mostrar/ocultar contenido de las practicas postman-->
+<script>
+  function mostrarContenidopost() {
+    const seleccion = document.getElementById("testingSelector1").value;
+    const secciones = document.querySelectorAll(".testing-content1");
 
     secciones.forEach(sec => sec.style.display = "none");
 
